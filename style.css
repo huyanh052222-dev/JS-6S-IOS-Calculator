@@ -12,6 +12,7 @@ body{
     width: 368px;
     height: 540px;
     background-color: rgb(16, 16, 16);
+    box-shadow: 4px 4px 10px rgb(100, 100, 100);
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -30,8 +31,15 @@ body{
             border-radius: 10px;
             position: relative;
             overflow: hidden;
-            /* -webkit-mask-image: linear-gradient(to left, rgb(161, 161, 161) 65%, transparent 90%);
-            mask-image: linear-gradient(to left, rgb(213, 213, 213) 65%, transparent 100%); */
+            &.shakeAnimate{
+                animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+                transform: translate3d(0,0,0);
+            }
+    
+            &.jump{
+                animation: jump 0.5s cubic-bezier(.36,.07,.19,.97) both;
+                transform: translate3d(0,0,0);
+            }
             #result{
                 position: absolute;
                 font-family: monospace;
@@ -41,6 +49,7 @@ body{
                 font-size: 20px;
             }
         }
+
         .keyboard{
             width: 340px;
             display: flex;
@@ -58,6 +67,8 @@ body{
                     height: 75px;
                     border-radius: 50%;
                     border: none;
+                    text-align: center;
+                    align-content: center;
                     background-color: rgb(50, 50, 50);
                     font-size: 24px;
                     color: white;
@@ -69,6 +80,7 @@ body{
                 }
                 button:active{
                     transform: scale(1.0);
+                    opacity: 0.5;
                 }
                 #func-btn{
                     background-color: rgb(124, 124, 124);
@@ -76,7 +88,37 @@ body{
                 #calcu-btn{
                     background-color: rgb(255, 136, 17);
                 }
+                .backspace{
+                    font-size: 40px;
+                }
             }
         }
+    }
+}
+
+@keyframes shake{
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes jump{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    30%{
+        transform: translateY(-5px);
+    }
+    60%{
+        transform: translateY(2px);
     }
 }

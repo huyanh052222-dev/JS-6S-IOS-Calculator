@@ -16,9 +16,9 @@
             </div>
             <div class="keyboard">
                 <div class="line">
-                    <button id="func-btn" onclick="deleteOne()">⌫</button>
+                    <button id="func-btn" class="backspace" onclick="deleteOne()">⌫</button>
                     <button id="func-btn" onclick="clearDisplay()">AC</button>
-                    <button id="func-btn">%</button>
+                    <button id="func-btn" onclick="addPad('%')">%</button>
                     <button id="calcu-btn"onclick="addPad('÷')">÷</button>
                 </div>
                 <div class="line">
@@ -43,7 +43,7 @@
                     <button>+/-</button>
                     <button onclick="addPad(0)">0</button>
                     <button>,</button>
-                    <button id="calcu-btn">=</button>
+                    <button id="calcu-btn" onclick="calculate()">=</button>
                 </div>
             </div>
         </div>

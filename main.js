@@ -1,4 +1,5 @@
 const display = document.getElementById("result");
+const displayWrap = document.getElementById("display");
 
 function clearDisplay(){
     display.textContent = "0";
@@ -24,10 +25,42 @@ function deleteOne(){
 }
 
 function addPad(character){
-    if(display.innerText === "Welcome to my Calculator" || display.innerText === "0"){
+    if(display.innerText === "Welcome to my Calculator" || display.innerText === "0"|| display.innerText === "Error"){
         display.textContent = character;
     } else{
         display.textContent += character;
     }
     console.log(display.textContent);
 }
+function effectDisplay(effect) {
+    displayWrap.classList.remove('jump', 'shakeAnimate');
+    void displayWrap.offsetWidth; 
+    displayWrap.classList.add(effect);
+}
+
+function calculate() {
+    if(display.textContent === "Welcome to my Calculator"){
+        display.textContent = "0";
+        effectDisplay('jump');
+        return;
+    }
+    try {
+        let expression = display.textContent;
+        let formula = expression.replace(/x/g, '*').replace(/÷/g, '/').replace(/%/g, '/100');
+
+        let result = eval(formula);
+
+        if (!isFinite(result)) {
+            display.textContent = "Error";
+            effectDisplay('shakeAnimate');
+        } else {
+            display.textContent = result;
+            effectDisplay('jump');
+        }
+
+    } catch (error) {
+        display.textContent = "Error";
+        effectDisplay('shakeAnimate')
+    }
+}
+
