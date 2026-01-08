@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div id="display" class="display">
+                <p id="result">Welcome to my Calculator</p>
+            </div>
+            <div class="keyboard">
+                <div class="line">
+                    <button id="func-btn" onclick="deleteOne()">DE</button>
+                    <button id="func-btn" onclick="clearDisplay()">AC</button>
+                    <button id="func-btn">%</button>
+                    <button id="calcu-btn">/</button>
+                </div>
+                <div class="line">
+                    <button onclick="addPad(7)">7</button>
+                    <button onclick="addPad(8)">8</button>
+                    <button onclick="addPad(9)">9</button>
+                    <button id="calcu-btn">x</button>
+                </div>
+                <div class="line">
+                    <button onclick="addPad(4)">4</button>
+                    <button onclick="addPad(5)">5</button>
+                    <button onclick="addPad(6)">6</button>
+                    <button id="calcu-btn">-</button>
+                </div>
+                <div class="line">
+                    <button onclick="addPad(1)">1</button>
+                    <button onclick="addPad(2)">2</button>
+                    <button onclick="addPad(3)">3</button>
+                    <button id="calcu-btn">+</button>
+                </div>
+                <div class="line">
+                    <button>+/-</button>
+                    <button>0</button>
+                    <button>,</button>
+                    <button id="calcu-btn">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
