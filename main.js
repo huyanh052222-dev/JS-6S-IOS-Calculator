@@ -46,7 +46,7 @@ function effectDisplay(effect) {
 }
 
 function calculate() {
-    if(display.textContent === "Welcome to my Calculator"){
+    if(display.textContent === "Welcome to my Calculator" || display.innerText === "Error"|| display.textContent === "Coming Soon!"){
         display.textContent = "0";
         effectDisplay('jump');
         return;
@@ -71,3 +71,19 @@ function calculate() {
     }
 }
 
+function signNum(){
+    let currentDisplay = display.textContent;
+
+    if(currentDisplay === "0" ||currentDisplay === "Welcome to my Calculator" || currentDisplay === "Error" || currentDisplay === "Infinity" || currentDisplay === "Coming Soon!"){
+        effectDisplay('jump');
+        return;
+    }
+
+    if(currentDisplay.startsWith("-(") && currentDisplay.endsWith(")")) {
+        display.textContent = currentDisplay.slice(2, -1);
+    }else {
+        display.textContent = `-(${currentDisplay})`;
+    }
+
+    effectDisplay('jump');
+}
