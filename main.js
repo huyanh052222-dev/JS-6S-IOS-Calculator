@@ -58,7 +58,7 @@ function calculate() {
         let result = eval(formula);
 
         if (!isFinite(result)) {
-            display.textContent = "Error";
+            display.textContent = "Infinity";
             effectDisplay('shakeAnimate');
         } else {
             display.textContent = result;
