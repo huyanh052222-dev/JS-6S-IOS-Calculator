@@ -2,7 +2,7 @@ const display = document.getElementById("result");
 const displayWrap = document.getElementById("display");
 
 function comingSoon(){
-    display.textContent = "Comming Soon!";
+    display.textContent = "Coming Soon!";
     effectDisplay('jump');
 }
 
