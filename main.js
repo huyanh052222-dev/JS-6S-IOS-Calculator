@@ -1,6 +1,11 @@
 const display = document.getElementById("result");
 const displayWrap = document.getElementById("display");
 
+function comingSoon(){
+    display.textContent = "Comming Soon!";
+    effectDisplay('jump');
+}
+
 function clearDisplay(){
     display.textContent = "0";
     effectDisplay('jump');
@@ -27,7 +32,7 @@ function deleteOne(){
 }
 
 function addPad(character){
-    if(display.innerText === "Welcome to my Calculator" || display.innerText === "0"|| display.innerText === "Error"){
+    if(display.innerText === "Welcome to my Calculator" || display.innerText === "0"|| display.innerText === "Error" || display.textContent === "Comming Soon!"){
         display.textContent = character;
     } else{
         display.textContent += character;
