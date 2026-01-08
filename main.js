@@ -3,14 +3,16 @@ const displayWrap = document.getElementById("display");
 
 function clearDisplay(){
     display.textContent = "0";
+    effectDisplay('jump');
 }
 
 function deleteOne(){
     if(display.innerText === "0"){
+        effectDisplay('jump');
         return;
     } 
     if(display.innerText === "Welcome to my Calculator"){
-        display.textContent = "0";
+        clearDisplay();
         return;
     }
     let currentText = display.textContent;

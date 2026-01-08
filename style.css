@@ -32,7 +32,9 @@ body{
             position: relative;
             overflow: hidden;
             &.shakeAnimate{
+                /* &. -> Cach de trinh duyet hieu ham display co class shakeAnimate thuoc pham vi cua trc khi goi vao bang js */
                 animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+                /* cubic-bezier la mot ham cs kha nang ve duong cong toc do (Giong ben capcut hay lam) */
                 transform: translate3d(0,0,0);
             }
     
