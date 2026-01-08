@@ -105,10 +105,10 @@ function signNum(){
         return;
     }
 
-    if(currentDisplay.startsWith("-(") && currentDisplay.endsWith(")")) {
+    if(currentDisplay.startsWith("(-") && currentDisplay.endsWith(")")) {
         display.textContent = currentDisplay.slice(2, -1);
     }else {
-        display.textContent = `-(${currentDisplay})`;
+        display.textContent = `(-${currentDisplay})`;
     }
 
     effectDisplay('jump');
