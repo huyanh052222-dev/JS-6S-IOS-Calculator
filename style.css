@@ -29,6 +29,9 @@ body{
             margin-top: 30px;
             border-radius: 10px;
             position: relative;
+            overflow: hidden;
+            /* -webkit-mask-image: linear-gradient(to left, rgb(161, 161, 161) 65%, transparent 90%);
+            mask-image: linear-gradient(to left, rgb(213, 213, 213) 65%, transparent 100%); */
             #result{
                 position: absolute;
                 font-family: monospace;

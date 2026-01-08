@@ -5,15 +5,26 @@ function clearDisplay(){
 }
 
 function deleteOne(){
+    if(display.innerText === "0"){
+        return;
+    } 
+    if(display.innerText === "Welcome to my Calculator"){
+        display.textContent = "0";
+        return;
+    }
+    let currentText = display.textContent;
+    let charArr = currentText.split('');
+    console.log(charArr);
 
-}
 
-function updateDisplay(){
-    
+    charArr.pop();
+    let result = charArr.join('');
+
+    display.textContent = (result === "") ? "0" : result;
 }
 
 function addPad(character){
-    if(display.innerText === "Welcome to my Calculator"){
+    if(display.innerText === "Welcome to my Calculator" || display.innerText === "0"){
         display.textContent = character;
     } else{
         display.textContent += character;
