@@ -32,7 +32,7 @@ function deleteOne(){
 }
 
 function addPad(character){
-    if(display.innerText === "Welcome to my Calculator"|| display.innerText === "Error" || display.textContent === "Infinity" || display.textContent === "Comming Soon!"){
+    if(display.innerText === "Welcome to my Calculator"|| display.innerText === "Error" || display.textContent === "Infinity" || display.textContent === "Coming Soon!"){
         display.textContent = character;
     } else{
         display.textContent += character;
