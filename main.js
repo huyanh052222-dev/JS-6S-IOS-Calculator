@@ -19,7 +19,7 @@ function deleteOne(){
         effectDisplay('jump');
         return;
     } 
-    if(display.innerText === "Welcome to my Calculator"){
+    if(display.innerText === "Welcome to my Calculator" || display.innerText === "Infinity" || display.innerText === "Error"){
         clearDisplay();
         return;
     }
