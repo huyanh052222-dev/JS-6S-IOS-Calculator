@@ -1,6 +1,8 @@
 const display = document.getElementById("result");
 const displayWrap = document.getElementById("display");
 
+let isFinished = false;
+
 function comingSoon(){
     display.textContent = "Coming Soon!";
     effectDisplay('jump');
@@ -32,7 +34,18 @@ function deleteOne(){
     display.textContent = (result === "") ? "0" : result;
 }
 
+
 function addPad(character){
+    if(isFinished){
+        if(!isNaN(character)){
+            display.textContent = character;
+        }else{
+            display.textContent += character;
+        }
+        isFinished = false;
+        return;
+    }
+
     if(display.innerText === "Welcome to my Calculator"|| display.innerText === "Error" || display.textContent === "Infinity" || display.textContent === "Coming Soon!"){
         display.textContent = character;
         return;
@@ -57,6 +70,7 @@ function effectDisplay(effect) {
 }
 
 function calculate() {
+
     if(display.textContent === "Welcome to my Calculator" || display.innerText === "Error"|| display.textContent === "Coming Soon!"){
         display.textContent = "0";
         effectDisplay('jump');
@@ -74,6 +88,7 @@ function calculate() {
         } else {
             display.textContent = result;
             effectDisplay('jump');
+            isFinished = true;
         }
 
     } catch (error) {
