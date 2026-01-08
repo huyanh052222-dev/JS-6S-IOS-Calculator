@@ -8,6 +8,7 @@ function comingSoon(){
 
 function clearDisplay(){
     display.textContent = "0";
+    display.value = 0;
     effectDisplay('jump');
 }
 
@@ -34,7 +35,17 @@ function deleteOne(){
 function addPad(character){
     if(display.innerText === "Welcome to my Calculator"|| display.innerText === "Error" || display.textContent === "Infinity" || display.textContent === "Coming Soon!"){
         display.textContent = character;
-    } else{
+        return;
+    } 
+    if(display.textContent === "0"){
+        if(!isNaN(character)){
+            display.textContent = character;
+
+        } else{
+            display.textContent += character;
+        }
+    }
+    else{
         display.textContent += character;
     }
     console.log(display.textContent);
@@ -53,7 +64,7 @@ function calculate() {
     }
     try {
         let expression = display.textContent;
-        let formula = expression.replace(/x/g, '*').replace(/÷/g, '/').replace(/%/g, '/100');
+        let formula = expression.replace(/x/g, '*').replace(/÷/g, '/').replace(/%/g, '/100').replace(/,/g, '.');
 
         let result = eval(formula);
 

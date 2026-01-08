@@ -49,6 +49,7 @@ body{
                 top: 15px;
                 right: 20px;
                 font-size: 20px;
+                white-space: nowrap; /* Cach nay hay ne =)))))))) */
             }
         }
 
