@@ -1,31 +1,9 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
-@supports (-webkit-overflow-scrolling: touch) {
-  /* CSS specific to iOS devices */ 
-}
-
-@supports not (-webkit-overflow-scrolling: touch) {
-  /* CSS for other than iOS devices */ 
-}
-
-
 body{
     width: 100%;
     height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
 }
@@ -34,28 +12,16 @@ body{
     width: 368px;
     height: 540px;
     background-color: rgb(16, 16, 16);
-    -webkit-box-shadow: 4px 4px 10px rgb(100, 100, 100);
-            box-shadow: 4px 4px 10px rgb(100, 100, 100);
+    box-shadow: 4px 4px 10px rgb(100, 100, 100);
     border-radius: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     .wrap{
         width: 340px;
         height: 520px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
         gap: 20px;
         .display{
             width: 340px;
@@ -67,18 +33,14 @@ body{
             overflow: hidden;
             &.shakeAnimate{
                 /* &. -> Cach de trinh duyet hieu ham display co class shakeAnimate thuoc pham vi cua trc khi goi vao bang js */
-                -webkit-animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
-                        animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+                animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
                 /* cubic-bezier la mot ham cs kha nang ve duong cong toc do (Giong ben capcut hay lam) */
-                -webkit-transform: translate3d(0,0,0);
-                        transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
             }
     
             &.jump{
-                -webkit-animation: jump 0.5s cubic-bezier(.36,.07,.19,.97) both;
-                        animation: jump 0.5s cubic-bezier(.36,.07,.19,.97) both;
-                -webkit-transform: translate3d(0,0,0);
-                        transform: translate3d(0,0,0);
+                animation: jump 0.5s cubic-bezier(.36,.07,.19,.97) both;
+                transform: translate3d(0,0,0);
             }
             #result{
                 position: absolute;
@@ -93,26 +55,15 @@ body{
 
         .keyboard{
             width: 340px;
-            display: -webkit-box;
-            display: -ms-flexbox;
             display: flex;
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
+            justify-content: center;
+            flex-direction: column;
             gap: 7px;
             .line{
                 width: 100%;
                 margin: 0 auto;
-                display: -webkit-box;
-                display: -ms-flexbox;
                 display: flex;
-                -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                        justify-content: center;
+                justify-content: center;
                 gap: 12px;
                 button{
                     width: 75px;
@@ -120,25 +71,18 @@ body{
                     border-radius: 50%;
                     border: none;
                     text-align: center;
-                    -ms-flex-line-pack: center;
-                        align-content: center;
+                    align-content: center;
                     background-color: rgb(50, 50, 50);
                     font-size: 24px;
                     color: white;
                     font-family: monospace;
                 }
                 button:hover{
-                    -webkit-transform: scale(1.08);
-                        -ms-transform: scale(1.08);
-                            transform: scale(1.08);
-                    -webkit-transition: all 0.2s ease;
-                    -o-transition: all 0.2s ease;
+                    transform: scale(1.08);
                     transition: all 0.2s ease;
                 }
                 button:active{
-                    -webkit-transform: scale(1.0);
-                        -ms-transform: scale(1.0);
-                            transform: scale(1.0);
+                    transform: scale(1.0);
                     opacity: 0.5;
                 }
                 #func-btn{
@@ -155,70 +99,29 @@ body{
     }
 }
 
-@-webkit-keyframes shake{
-    10%, 90% {
-        -webkit-transform: translate3d(-1px, 0, 0);
-                transform: translate3d(-1px, 0, 0);
-    }
-    20%, 80% {
-        -webkit-transform: translate3d(2px, 0, 0);
-                transform: translate3d(2px, 0, 0);
-    }
-    30%, 50%, 70% {
-        -webkit-transform: translate3d(-4px, 0, 0);
-                transform: translate3d(-4px, 0, 0);
-    }
-    40%, 60% {
-        -webkit-transform: translate3d(4px, 0, 0);
-                transform: translate3d(4px, 0, 0);
-    }
-}
-
 @keyframes shake{
     10%, 90% {
-        -webkit-transform: translate3d(-1px, 0, 0);
-                transform: translate3d(-1px, 0, 0);
+        transform: translate3d(-1px, 0, 0);
     }
     20%, 80% {
-        -webkit-transform: translate3d(2px, 0, 0);
-                transform: translate3d(2px, 0, 0);
+        transform: translate3d(2px, 0, 0);
     }
     30%, 50%, 70% {
-        -webkit-transform: translate3d(-4px, 0, 0);
-                transform: translate3d(-4px, 0, 0);
+        transform: translate3d(-4px, 0, 0);
     }
     40%, 60% {
-        -webkit-transform: translate3d(4px, 0, 0);
-                transform: translate3d(4px, 0, 0);
-    }
-}
-
-@-webkit-keyframes jump{
-    0%, 100%{
-        -webkit-transform: translateY(0px);
-                transform: translateY(0px);
-    }
-    30%{
-        -webkit-transform: translateY(-5px);
-                transform: translateY(-5px);
-    }
-    60%{
-        -webkit-transform: translateY(2px);
-                transform: translateY(2px);
+        transform: translate3d(4px, 0, 0);
     }
 }
 
 @keyframes jump{
     0%, 100%{
-        -webkit-transform: translateY(0px);
-                transform: translateY(0px);
+        transform: translateY(0px);
     }
     30%{
-        -webkit-transform: translateY(-5px);
-                transform: translateY(-5px);
+        transform: translateY(-5px);
     }
     60%{
-        -webkit-transform: translateY(2px);
-                transform: translateY(2px);
+        transform: translateY(2px);
     }
 }
